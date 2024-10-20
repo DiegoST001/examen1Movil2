@@ -41,7 +41,7 @@ class detalles : AppCompatActivity() {
             binding.tvNumero.text = "Número: ${bundle.getString(NUMBER_KEY)}"
             binding.tvProducto.text = "Producto: ${bundle.getString(PRODUCT_KEY)}"
             binding.tvUbicacion.text = "Ubicación: ${bundle.getString(CITY_KEY)}"
-            binding.tvDireccion.text = "Dirección: ${bundle.getString(ADDRESS_KEY)}"
+            binding.tvUbicacion.text = "Dirección: ${bundle.getString(ADDRESS_KEY)}"
         }
     }
 
