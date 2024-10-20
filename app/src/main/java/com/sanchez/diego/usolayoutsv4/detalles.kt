@@ -1,5 +1,7 @@
 package com.sanchez.diego.usolayoutsv4
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +32,7 @@ class detalles : AppCompatActivity() {
         }
 
         setInformation(intent.extras)
+        observeButtons(intent.extras)
     }
 
     private fun setInformation(bundle: Bundle?) {
@@ -37,8 +40,45 @@ class detalles : AppCompatActivity() {
             binding.tvNombre.text = "Nombre: ${bundle.getString(NAME_KEY)}"
             binding.tvNumero.text = "Número: ${bundle.getString(NUMBER_KEY)}"
             binding.tvProducto.text = "Producto: ${bundle.getString(PRODUCT_KEY)}"
-            binding.tvCiudad.text = "Ciudad: ${bundle.getString(CITY_KEY)}"
+            binding.tvUbicacion.text = "Ubicación: ${bundle.getString(CITY_KEY)}"
             binding.tvDireccion.text = "Dirección: ${bundle.getString(ADDRESS_KEY)}"
         }
+    }
+
+    private fun observeButtons(bundle: Bundle?) {
+        binding.ivWsp.setOnClickListener {
+            goWhatsApp(bundle)
+        }
+
+        binding.ivLlamar.setOnClickListener {
+            goDial(bundle)
+        }
+
+        binding.Maps.setOnClickListener {
+            openMaps(bundle)
+        }
+    }
+
+    private fun goWhatsApp(bundle: Bundle?) {
+        val phone = "+51${bundle?.getString(NUMBER_KEY)}"
+        val message = "Hola, he realizado un pedido con los siguientes detalles."
+        val intentWsp = Intent(Intent.ACTION_VIEW)
+        intentWsp.data = Uri.parse("https://wa.me/$phone?text=$message")
+        startActivity(intentWsp)
+    }
+
+    private fun goDial(bundle: Bundle?) {
+        val phone = bundle?.getString(NUMBER_KEY)
+        val intentDial = Intent(Intent.ACTION_DIAL)
+        intentDial.data = Uri.parse("tel:$phone")
+        startActivity(intentDial)
+    }
+
+    private fun openMaps(bundle: Bundle?) {
+        val address = bundle?.getString(ADDRESS_KEY)
+        val uri = Uri.parse("geo:0,0?q=$address")
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        intent.setPackage("com.google.android.apps.maps")
+        startActivity(intent)
     }
 }
