@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detalles">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:text="Pedido" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_myplaces"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Nombre Cliente"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_call"
+                android:scaleType="centerCrop" />
+
+            <!--android:src="@drawable/tu_imagen"-->
+            <!--android:scaleType="centerCrop"-->
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Numero Cliente"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_upload"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Producto"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_mylocation"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Ubicacion"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_call"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_send"
+            android:scaleType="fitCenter"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_mylocation"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
